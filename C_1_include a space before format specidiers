@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define MAX_LEN 100
+
+int main() 
+{
+    char ch;
+    char str[MAX_LEN];
+    char sentence[25];
+    scanf("%c",&ch);
+    printf("%c\n",ch);
+    scanf("%s",str);
+    printf("%s\n",str);
+    scanf(" %[^\n]s",sentence);
+    printf("%s\n",sentence);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
+//************************************
+//Test Case - 1
+//C
+//Language
+//Welcome To C!!
+//************************************
+
+/*
+For the above test case the input stream looks like: C/nLanguage/nWelcome To C/n
+If Line 17 is scanf("%[^\n]s",sentence);
+Then Line 17 will not take Welcome to C instead take /n which is not intended.
+Solution to above problem : 
+Adding a space like : scanf(" %[^\n]s",sentence);
+The first space will remove any standard whitespace characters namely tabs(\t),spaces(''),newline(\n),vertical tab(\v),feed(\f),return(/r).
+*/
